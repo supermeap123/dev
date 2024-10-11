@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GWYNTEL's CORNER</title>
+    <style>
+        body {
+            background-color: #ffd1dc;
+            color: #333;
+            font-family: Comic Sans MS, Comic Sans, cursive;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            color: #ff69b4;
+        }
+        a {
+            display: block;
+            margin: 10px;
+            color: #ff69b4;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .heart {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/85586/heart.png') no-repeat center center;
+            background-size: contain;
+            animation: float 5s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-20px) translateX(10px);
+            }
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>GWYNTEL's CORNER</h1>
+    <a href="https://www.tumblr.com/blog/gwyntel">Tumblr</a>
+    <a href="discord://discordapp.com/users/203663993741639680">Discord</a>
+    <a href="https://x.com/threethousandtm">Twitter</a>
+    <a href="https://sydney.gwyn.tel">Sydney's Corner</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const createHeart = () => {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.top = `${Math.random() * 100}%`;
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            };
+
+            setInterval(createHeart, 300);
+        });
+    </script>
+</body>
+</html>
